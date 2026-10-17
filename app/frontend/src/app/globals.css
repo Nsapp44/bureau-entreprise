@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0e0d0c;
+  --foreground: #f3f1ec;
+
+  /* Tokens sémantiques de la refonte (valeurs = palette NASAP3D existante) */
+  --surface-1: #161514;
+  --surface-2: #1a1917;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --text-primary: #f3f1ec;
+  --text-muted: #a29f99;
+  --accent: #ff5a3c;
+  --provider-claude: #ff8a4c;
+  --provider-openai: #10a37f;
+  --radius-control: 6px;
+  --radius-card: 10px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+}
+
+/*
+ * "NASAP3D" theme: the UI uses Tailwind's slate/gray/neutral/zinc/orange
+ * scales everywhere, so remapping them here re-skins the whole HTML interface
+ * (warm near-black surfaces, cream text, orange #FF5A3C accent) without
+ * touching individual components. PixiJS scene colors are unaffected.
+ */
+@theme {
+  --color-slate-50: #f8f7f3;
+  --color-slate-100: #f3f1ec;
+  --color-slate-200: #e4e1da;
+  --color-slate-300: #cfccc5;
+  --color-slate-400: #a29f99;
+  --color-slate-500: #85827d;
+  --color-slate-600: #4a4743;
+  --color-slate-700: #34322f;
+  --color-slate-800: #1a1917;
+  --color-slate-900: #161514;
+  --color-slate-950: #0e0d0c;
+
+  --color-gray-50: #f8f7f3;
+  --color-gray-100: #f3f1ec;
+  --color-gray-200: #e4e1da;
+  --color-gray-300: #cfccc5;
+  --color-gray-400: #a29f99;
+  --color-gray-500: #85827d;
+  --color-gray-600: #4a4743;
+  --color-gray-700: #34322f;
+  --color-gray-800: #1a1917;
+  --color-gray-900: #161514;
+  --color-gray-950: #0e0d0c;
+
+  --color-neutral-50: #f8f7f3;
+  --color-neutral-100: #f3f1ec;
+  --color-neutral-200: #e4e1da;
+  --color-neutral-300: #cfccc5;
+  --color-neutral-400: #a29f99;
+  --color-neutral-500: #85827d;
+  --color-neutral-600: #4a4743;
+  --color-neutral-700: #34322f;
+  --color-neutral-800: #1a1917;
+  --color-neutral-900: #161514;
+  --color-neutral-950: #0e0d0c;
+
+  --color-zinc-50: #f8f7f3;
+  --color-zinc-100: #f3f1ec;
+  --color-zinc-200: #e4e1da;
+  --color-zinc-300: #cfccc5;
+  --color-zinc-400: #a29f99;
+  --color-zinc-500: #85827d;
+  --color-zinc-600: #4a4743;
+  --color-zinc-700: #34322f;
+  --color-zinc-800: #1a1917;
+  --color-zinc-900: #161514;
+  --color-zinc-950: #0e0d0c;
+
+  --color-orange-50: #fff3f0;
+  --color-orange-100: #ffe1da;
+  --color-orange-200: #ffc2b5;
+  --color-orange-300: #ff9c88;
+  --color-orange-400: #ff7a60;
+  --color-orange-500: #ff5a3c;
+  --color-orange-600: #e64a2e;
+  --color-orange-700: #bf3a22;
+  --color-orange-800: #8f2c19;
+  --color-orange-900: #5e1d11;
+  --color-orange-950: #330f09;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-space-grotesk), var(--font-inter), sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --animate-tour-ring: tour-ring-pulse 1.5s ease-in-out infinite;
+  --animate-slide-up: slide-up 300ms ease-out forwards;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+@keyframes tour-ring-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 3px rgba(255, 90, 60, 0.6),
+      0 0 20px 4px rgba(255, 90, 60, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 0 5px rgba(255, 90, 60, 0.4),
+      0 0 30px 8px rgba(255, 90, 60, 0.3);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  /* react-zoom-pan-pinch sizes its wrapper/content to fit-content by default,
+     so a wide canvas column makes the content taller than its container and the
+     bottom gets clipped by overflow-hidden. Force them to fill the container so
+     object-fit: contain can letterbox the canvas and keep every edge visible
+     (otherwise the Command Center's wide canvas crops the bottom of the room). */
+  .react-transform-wrapper,
+  .react-transform-component {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* PixiJS Canvas Scaling — anchored to top-left to prevent drift from
+     flex centering recalculations during frequent WebSocket re-renders */
+  .pixi-canvas-container {
+    container-type: size;
+  }
+  /* The canvas box keeps the 1280x1024 ratio (no letterbox inside a stretched
+     box), otherwise Pixi hit-testing is offset when the window ratio differs
+     (fullscreen). */
+  .pixi-canvas-container canvas {
+    width: min(100cqw, calc(100cqh * 1.25)) !important;
+    height: min(100cqh, calc(100cqw / 1.25)) !important;
+    object-fit: contain;
+    object-position: top left;
+  }
+
+  /* Custom Scrollbar Theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #34322f; /* slate-700 */
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff5a3c; /* orange-500 */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #34322f transparent;
+  }
+}
+
+/* Tour pulse animation */
+@keyframes tourPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(255, 90, 60, 0.4);
+    border-color: rgba(255, 90, 60, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 90, 60, 0.6);
+    border-color: rgba(255, 90, 60, 1);
+  }
+}
+
+/* View transition animations */
+@keyframes zoomInView {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOutView {
+  from {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Focus visible et état désactivé communs */
+:where(button, [role="button"], a, input, select, textarea):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+:where(button, [role="button"]):disabled,
+[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Mouvements réduits (le canvas Pixi n'est pas concerné) */
+@media (prefers-reduced-motion: reduce) {
+  *:not(canvas),
+  *:not(canvas)::before,
+  *:not(canvas)::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

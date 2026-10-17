@@ -1,0 +1,12 @@
+﻿logs/
+sauvegardes/
+captures/
+.env
+*.db
+*.log
+node_modules/
+.venv/
+.next/
+out/
+app/backend/static/
+__pycache__/

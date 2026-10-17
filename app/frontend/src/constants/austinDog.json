@@ -1,0 +1,56 @@
+{
+  "_doc": "Austin, office dog (Australian shepherd x American shepherd, red/tri coat (white & brown dominant, light merle accents), heterochromia: left eye grey, right eye blue). Pixel grid facing RIGHT; mirror for left. Each char = one pixel of `pixel` game px; '.' = transparent.",
+  "name": "Austin",
+  "pixel": 3,
+  "palette": {
+    "K": "#1E1C1B",
+    "G": "#9A5B2E",
+    "g": "#D9A066",
+    "D": "#7D858E",
+    "W": "#F3F1EC",
+    "C": "#C47A3A",
+    "E": "#DDE2E6",
+    "B": "#4FB4FF",
+    "P": "#E86A8A",
+    "R": "#FF5A3C",
+    "Y": "#F2C14E"
+  },
+  "frames": [
+    [
+      "...............KKK..KKK.",
+      "..............KDDGKKGDDK",
+      "..............KGGGGGGGGK",
+      "..............KDDDWWGGGK",
+      "..............KDEKWWBKGK",
+      "..............KGDWWWWGGK",
+      "..KK..........KCGWWWWKKK",
+      ".KDgK.KKKKKKKKKCWWWWWWKK",
+      ".KGgGKGDGgGDGGGGCWWPK...",
+      "..KGGGGDDGGGgGGRRYRK....",
+      "...KGGgWWWWWGGGWWWWK....",
+      "....KGWWWWWWWWGWWWK.....",
+      "....KCGKKKKKKKKGCKK.....",
+      "....KWK.......KWK.......",
+      "...KWK.........KWK......",
+      "...KK...........KK......"
+    ],
+    [
+      "...............KKK..KKK.",
+      "..............KDDGKKGDDK",
+      "..............KGGGGGGGGK",
+      "..............KDDDWWGGGK",
+      "..............KDEKWWBKGK",
+      "..............KGDWWWWGGK",
+      "...KK.........KCGWWWWKKK",
+      "..KDgKKKKKKKKKKCWWWWWWKK",
+      "..KGgGGDGgGDGGGGCWWPK...",
+      "..KGGGGDDGGGgGGRRYRK....",
+      "...KGGgWWWWWGGGWWWWK....",
+      "....KGWWWWWWWWGWWWK.....",
+      "....KCGKKKKKKKKGCKK.....",
+      ".....KWK....KWK.........",
+      "......KWK..KWK..........",
+      "......KK...KK..........."
+    ]
+  ]
+}

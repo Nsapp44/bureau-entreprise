@@ -1,0 +1,83 @@
+{
+  "_doc": "Two office cats, hand-made pixel art (same format as austinDog.json). Frames face RIGHT, mirror for left. Each char = one pixel of `pixel` game px; '.' = transparent. Frame order: 0/1 = walk, 2 = curled asleep, 3 = head down (drink / eat). K outline, B body, b stripe/shade, W paws, E eyes, N nose, I inner ear.",
+  "pixel": 3,
+  "frames": [
+    [
+      "...........K..K.",
+      "..........KBKKBK",
+      "..........KBBBBK",
+      "..........KBEBEK",
+      "K.........KBBNBK",
+      "KB..KKKKKKKKBBK.",
+      "KBKKBBBBBBBBBBK.",
+      ".KBBBbBBbBBBBBK.",
+      "..KBBBBBBBBBBK..",
+      "..KWWKKKKKKWWK..",
+      "..KWK......KWK..",
+      "..KK.......KK..."
+    ],
+    [
+      "...........K..K.",
+      "..........KBKKBK",
+      "..........KBBBBK",
+      "..........KBEBEK",
+      "K.........KBBNBK",
+      "KB..KKKKKKKKBBK.",
+      "KBKKBBBBBBBBBBK.",
+      ".KBBBbBBbBBBBBK.",
+      "..KBBBBBBBBBBK..",
+      "..KWWKKKKKKWWK..",
+      "....KWK..KWK....",
+      "....KK...KK....."
+    ],
+    [
+      "..........K..K..",
+      "....KKKKKKKKKKKK",
+      "..KKBBBBBBBBBBBK",
+      ".KBBbBBBBbBBKKBK",
+      ".KBbBBBBBbBBBNBK",
+      ".KWWBBBBBBBBBWWK",
+      "..KKKKKKKKKKKK.."
+    ],
+    [
+      "................",
+      "K...............",
+      "KB..............",
+      "KBKKKKKKKK......",
+      ".KBBBbBBbBBK....",
+      ".KBBBBBBBBBKIKIK",
+      ".KBBBBBBBBKBBBBK",
+      ".KBBBBBBBBKBEBEK",
+      ".KWBBBBBBBKBBBNK",
+      "..KWK...KWKKKKK.",
+      "..KWK...KWK.....",
+      "..KKK...KKK....."
+    ]
+  ],
+  "cats": [
+    {
+      "name": "Diane",
+      "palette": {
+        "K": "#050507",
+        "B": "#2b2b36",
+        "b": "#3d3d4c",
+        "W": "#4a4a5a",
+        "E": "#f2d04a",
+        "N": "#e86a8a",
+        "I": "#6b4a5a"
+      }
+    },
+    {
+      "name": "Seth",
+      "palette": {
+        "K": "#7a3d12",
+        "B": "#e8883a",
+        "b": "#c8641e",
+        "W": "#fbe9d0",
+        "E": "#2f6b3a",
+        "N": "#e86a8a",
+        "I": "#f2a9a0"
+      }
+    }
+  ]
+}
