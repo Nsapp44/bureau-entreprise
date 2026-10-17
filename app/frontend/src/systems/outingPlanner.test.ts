@@ -8,7 +8,7 @@ import {
   BREAK_CHANCE_PER_TICK,
   COFFEE_WAIT_MS,
   OUTING_COOLDOWN_MS,
-  YANIS_BREAK_FACTOR,
+  IVAN_BREAK_FACTOR,
   type PlannedAgent,
 } from "./outingPlanner";
 
@@ -18,7 +18,7 @@ const always = () => 0;
 function agent(over: Partial<PlannedAgent> = {}): PlannedAgent {
   return {
     id: "a1",
-    name: "Florian",
+    name: "Louis",
     phase: "idle",
     backendState: "waiting",
     ...over,
@@ -26,11 +26,11 @@ function agent(over: Partial<PlannedAgent> = {}): PlannedAgent {
 }
 
 describe("breakChance", () => {
-  it("Yanis sort plus souvent que les autres", () => {
-    expect(breakChance("Yanis")).toBe(
-      BREAK_CHANCE_PER_TICK * YANIS_BREAK_FACTOR,
+  it("Ivan sort plus souvent que les autres", () => {
+    expect(breakChance("Ivan")).toBe(
+      BREAK_CHANCE_PER_TICK * IVAN_BREAK_FACTOR,
     );
-    expect(breakChance("yanis ")).toBeGreaterThan(breakChance("Florian"));
+    expect(breakChance("ivan ")).toBeGreaterThan(breakChance("Louis"));
     expect(breakChance(null)).toBe(BREAK_CHANCE_PER_TICK);
   });
 });
@@ -83,14 +83,14 @@ describe("OutingPlanner - pause", () => {
     expect(plan.coffee).toEqual([]);
   });
 
-  it("Yanis passe le tirage là où un autre agent le rate", () => {
+  it("Ivan passe le tirage là où un autre agent le rate", () => {
     const roll = () => BREAK_CHANCE_PER_TICK * 2; // entre x1 et x3
     const p = new OutingPlanner();
     const plan = p.tick(
       0,
       [
-        agent({ id: "f", name: "Florian", backendState: "working" }),
-        agent({ id: "y", name: "Yanis", backendState: "working" }),
+        agent({ id: "f", name: "Louis", backendState: "working" }),
+        agent({ id: "y", name: "Ivan", backendState: "working" }),
       ],
       roll,
     );

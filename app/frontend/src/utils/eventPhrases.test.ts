@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { buildEventPhrase, describeTool } from "./eventPhrases";
 
-const florian = {
-  name: "Florian",
+const louis = {
+  name: "Louis",
   model: "claude-haiku-4-5-20251001",
   color: "#f00",
 };
@@ -46,9 +46,9 @@ describe("buildEventPhrase", () => {
   it("names agents with model and color", () => {
     const p = buildEventPhrase(
       { type: "pre_tool_use", agentId: "a1", detail: { toolName: "Bash" } },
-      florian,
+      louis,
     );
-    expect(p.actor).toBe("Florian");
+    expect(p.actor).toBe("Louis");
     expect(p.actorModel).toBe("Haiku 4.5");
     expect(p.actorColor).toBe("#f00");
     expect(p.text).toBe("lance une commande");
@@ -82,9 +82,9 @@ describe("buildEventPhrase", () => {
   it("builds lifecycle phrases", () => {
     const start = buildEventPhrase(
       { type: "subagent_start", agentId: "a1" },
-      florian,
+      louis,
     );
-    expect(`${start.actor} ${start.text}`).toBe("Boss embauche Florian");
+    expect(`${start.actor} ${start.text}`).toBe("Boss embauche Louis");
     expect(
       buildEventPhrase({ type: "user_prompt_submit", agentId: "main" }).text,
     ).toBe("Nouvelle demande");

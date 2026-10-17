@@ -26,7 +26,7 @@ export interface PhraseAgent {
 
 export interface EventPhrase {
   icon: string;
-  /** Who acts ("Boss", "Florian"); null when the event has no actor. */
+  /** Who acts ("Boss", "Louis"); null when the event has no actor. */
   actor: string | null;
   isBoss: boolean;
   /** Short model label shown next to the actor (agents only). */

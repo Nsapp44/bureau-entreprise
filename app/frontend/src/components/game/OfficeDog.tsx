@@ -1,5 +1,5 @@
 /**
- * OfficeDog - Austin, le chien du bureau. Un seul useTick, position en ref
+ * OfficeDog - Rex, le chien du bureau. Un seul useTick, position en ref
  * (pas de re-render React, pas de store global). Le zIndex du conteneur est
  * mis a jour a chaque tick (= y des pieds) pour le tri en profondeur.
  */
@@ -7,7 +7,7 @@
 import { extend, useTick } from "@pixi/react";
 import { Container, Graphics, Text } from "pixi.js";
 import { useMemo, useRef, type ReactNode } from "react";
-import dogData from "@/constants/austinDog.json";
+import dogData from "@/constants/rexDog.json";
 import { useGameStore } from "@/stores/gameStore";
 import {
   GRID_HEIGHT,

@@ -567,7 +567,7 @@ export function OfficeGame(): ReactNode {
 
                   {/* Y-sorted layer: chairs and agents sorted by Y position (higher Y = in front) */}
                   <pixiContainer sortableChildren={true}>
-                    {/* Austin the office dog - zIndex = feet Y (set in its tick) */}
+                    {/* Rex the office dog - zIndex = feet Y (set in its tick) */}
                     <OfficeDog />
 
                     {/* The two office cats (black and orange) */}

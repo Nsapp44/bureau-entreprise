@@ -24,7 +24,7 @@ _THINKING_READ_SIZE = 50_000
 
 # Files larger than this are skipped to bound memory use when the whole
 # file is read (count_tool_uses_from_jsonl). Generous enough for very long
-# real sessions while preventing a pathological transcript from exhausting RAM.
+# real sessions while preventing a pathological transcript from exhrexg RAM.
 _MAX_TRANSCRIPT_BYTES = 50_000_000
 
 # Model family → max context window (tokens).

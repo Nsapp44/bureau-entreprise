@@ -1,6 +1,6 @@
 {
   "_doc": "Pixel-art looks per agent first name. Coordinates in px relative to the agent origin (bottom circle centre); the capsule spans x -24..24, y -58..22. Each rect: [x, y, w, h, color]. 'glasses' = legacy flag (aviator sunglasses removed, glasses are rects), 'headset' = keep the shared headset at the desk, 'orbit' = animated electron ring.",
-  "florian": {
+  "louis": {
     "theme": "détente, vibe électrique",
     "body": "#F5C518",
     "glasses": false,
@@ -155,7 +155,7 @@
       ]
     ]
   },
-  "alexandre": {
+  "leo": {
     "theme": "ingénieur robotique, cyborg",
     "body": "#8A9BA8",
     "glasses": false,
@@ -254,7 +254,7 @@
       ]
     ]
   },
-  "martial": {
+  "victor": {
     "theme": "vieux maître sage",
     "body": "#7A9A5A",
     "glasses": false,
@@ -416,7 +416,7 @@
       ]
     ]
   },
-  "guilherm": {
+  "theo": {
     "theme": "électron vif",
     "body": "#3D7BFF",
     "glasses": false,
@@ -558,7 +558,7 @@
       ]
     ]
   },
-  "noemie": {
+  "emma": {
     "theme": "classe et épurée",
     "body": "#F3F1EC",
     "glasses": false,
@@ -727,7 +727,7 @@
       ]
     ]
   },
-  "orlane": {
+  "clara": {
     "theme": "designer",
     "body": "#E0479E",
     "glasses": false,
@@ -980,7 +980,7 @@
       ]
     ]
   },
-  "yanis": {
+  "ivan": {
     "theme": "style russe",
     "body": "#C8102E",
     "glasses": false,
@@ -1079,7 +1079,7 @@
       ]
     ]
   },
-  "germain": {
+  "hugo": {
     "theme": "circuit imprimé (PCB)",
     "body": "#1F7A3A",
     "glasses": false,

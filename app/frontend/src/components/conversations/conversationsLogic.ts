@@ -99,8 +99,8 @@ export function needsLabel(needsReason?: string | null): string {
 }
 
 /**
- * Personnage du poste (Florian, Martial...) : un par poste, dans l'ordre des
- * looks existants ; au-delà, « Florian 2 » (même règle que l'ancien bureau).
+ * Personnage du poste (Louis, Victor...) : un par poste, dans l'ordre des
+ * looks existants ; au-delà, « Louis 2 » (même règle que l'ancien bureau).
  */
 export function agentNameForDesk(deskIndex: number): string {
   const keys = Object.keys(PIXEL_LOOKS);

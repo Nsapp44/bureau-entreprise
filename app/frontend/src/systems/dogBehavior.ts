@@ -1,5 +1,5 @@
 /**
- * Comportement pur d'Austin, le chien du bureau.
+ * Comportement pur d'Rex, le chien du bureau.
  * Aucune dependance a React/Pixi : l'etat est mis a jour par `stepDog`.
  * Le chien n'est jamais ajoute a la grille comme obstacle dynamique.
  */

@@ -1,6 +1,6 @@
-"""Aperçu d'Austin (lit austinDog.json) : 2 images de course, grand + taille réelle.
+"""Aperçu d'Rex (lit rexDog.json) : 2 images de course, grand + taille réelle.
 
-Usage : uv run --no-project --with pillow apercu_austin.py
+Usage : uv run --no-project --with pillow apercu_rex.py
 """
 
 import json
@@ -10,9 +10,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 DOG = json.loads(
-    (ROOT / "app/frontend/src/constants/austinDog.json").read_text(encoding="utf-8")
+    (ROOT / "app/frontend/src/constants/rexDog.json").read_text(encoding="utf-8")
 )
-OUT = ROOT / "outils" / "apercu-austin.png"
+OUT = ROOT / "outils" / "apercu-rex.png"
 
 pal = DOG["palette"]
 frames = DOG["frames"]
@@ -40,7 +40,7 @@ try:
 except OSError:
     font = small = ImageFont.load_default()
 
-d.text((550, 20), "Austin — berger australien x berger américain (blanc & marron)", fill="#F3F1EC", font=font, anchor="mt")
+d.text((550, 20), "Rex — berger australien x berger américain (blanc & marron)", fill="#F3F1EC", font=font, anchor="mt")
 d.text((550, 56), "yeux vairons : gauche gris, droit bleu · collier orange Nasap3D", fill="#FF5A3C", font=small, anchor="mt")
 for i, f in enumerate(frames):
     im = render(f, big)

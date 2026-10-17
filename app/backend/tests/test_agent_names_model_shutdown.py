@@ -17,7 +17,7 @@ from app.core.summary_service import SummaryService
 from app.core.transcript_poller import PolledAgent, TranscriptPoller
 from app.models.events import AgentEvent, AgentEventData, EventType
 
-NAMES = ["Florian", "Germain"]
+NAMES = ["Louis", "Hugo"]
 
 
 def _service(_unused: str = "") -> SummaryService:
@@ -38,20 +38,20 @@ class TestConfiguredAgentNames:
         assert len(Settings().AGENT_NAMES.split(",")) == 8
 
     def test_picks_from_list(self, names_setting: Settings) -> None:
-        names_setting.AGENT_NAMES = " Florian , Germain ,, "
+        names_setting.AGENT_NAMES = " Louis , Hugo ,, "
         svc = _service("")
         for _ in range(20):
             assert svc.generate_agent_name_fallback("write tests", None, "Explore") in NAMES
 
     def test_skips_taken_names(self, names_setting: Settings) -> None:
-        names_setting.AGENT_NAMES = "Florian,Germain"
+        names_setting.AGENT_NAMES = "Louis,Hugo"
         svc = _service("")
-        assert svc.generate_agent_name_fallback("x", {"Florian"}) == "Germain"
+        assert svc.generate_agent_name_fallback("x", {"Louis"}) == "Hugo"
 
     def test_dedupes_when_all_taken(self, names_setting: Settings) -> None:
-        names_setting.AGENT_NAMES = "Florian"
+        names_setting.AGENT_NAMES = "Louis"
         svc = _service("")
-        assert svc.generate_agent_name_fallback("x", {"Florian"}) == "Florian 2"
+        assert svc.generate_agent_name_fallback("x", {"Louis"}) == "Louis 2"
 
     def test_empty_list_keeps_original_behaviour(self, names_setting: Settings) -> None:
         names_setting.AGENT_NAMES = ""
@@ -61,7 +61,7 @@ class TestConfiguredAgentNames:
 
     @pytest.mark.asyncio
     async def test_ai_path_not_called_when_names_configured(self, names_setting: Settings) -> None:
-        names_setting.AGENT_NAMES = "Florian,Germain"
+        names_setting.AGENT_NAMES = "Louis,Hugo"
         svc = _service("")
         svc.enabled = True
         svc._call_with_retry = AsyncMock(return_value="Test Pilot")  # type: ignore[method-assign]

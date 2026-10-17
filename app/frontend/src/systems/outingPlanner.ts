@@ -4,7 +4,7 @@
  * - Café : un agent qui attend plus de 5 min va boire un café. En principe
  *   cela n'arrive jamais (un agent n'attend jamais plus de 5 min) : chaque
  *   café est donc une alerte, et le compteur sert de surveillance.
- * - Pause : sortie aléatoire vers le coin détente. Yanis sort plus souvent.
+ * - Pause : sortie aléatoire vers le coin détente. Ivan sort plus souvent.
  */
 
 import { pickNear, type DogGrid, type Rng } from "./dogBehavior";
@@ -20,8 +20,8 @@ export const COFFEE_WAIT_MS = 5 * 60 * 1000;
 export const PLANNER_TICK_MS = 5000;
 /** Probabilité de pause par vérification (~1 pause / 20 min en moyenne). */
 export const BREAK_CHANCE_PER_TICK = 0.004;
-/** Yanis sort ~3 fois plus souvent que les autres. */
-export const YANIS_BREAK_FACTOR = 3;
+/** Ivan sort ~3 fois plus souvent que les autres. */
+export const IVAN_BREAK_FACTOR = 3;
 /** Délai minimal entre deux sorties d'un même agent. */
 export const OUTING_COOLDOWN_MS = 2 * 60 * 1000;
 
@@ -39,8 +39,8 @@ const LOUNGE_ANCHOR: Position = {
 };
 
 export function breakChance(name: string | null): number {
-  const isYanis = (name ?? "").trim().toLowerCase() === "yanis";
-  return BREAK_CHANCE_PER_TICK * (isYanis ? YANIS_BREAK_FACTOR : 1);
+  const isIvan = (name ?? "").trim().toLowerCase() === "ivan";
+  return BREAK_CHANCE_PER_TICK * (isIvan ? IVAN_BREAK_FACTOR : 1);
 }
 
 /** Case libre où l'agent va se poster, ou null si rien de libre. */

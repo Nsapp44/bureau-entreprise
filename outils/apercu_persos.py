@@ -54,7 +54,7 @@ for i, key in enumerate(names):
         rect(ox, oy, 6, -41, 6, 2, "#555555")
     for x, y, w, h, color in look["rects"]:
         rect(ox, oy, x, y, w, h, color)
-    label = key.capitalize().replace("Noemie", "Noémie")
+    label = key.capitalize().replace("Emma", "Emma")
     d.text(((cx + CELL_W / 2) * S, (cy + 8) * S), label, fill="#F3F1EC", font=font, anchor="mt")
     d.text(((cx + CELL_W / 2) * S, (cy + 22) * S), look["theme"], fill="#FF5A3C", font=small, anchor="mt")
     if look.get("headset"):

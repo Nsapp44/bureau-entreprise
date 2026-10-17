@@ -93,7 +93,7 @@ class Settings(BaseSettings):
 
     # Agent display names: comma-separated list, overridable in .env.
     # Empty = use the original generated names.
-    AGENT_NAMES: str = "Florian,Germain,Martial,Guilherm,Alexandre,Yanis,Orlane,Noémie"
+    AGENT_NAMES: str = "Louis,Hugo,Victor,Theo,Leo,Ivan,Clara,Emma"
 
     CLAUDE_PATH_HOST: str = ""
     CLAUDE_PATH_CONTAINER: str = ""

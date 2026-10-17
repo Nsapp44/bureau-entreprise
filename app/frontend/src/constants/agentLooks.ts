@@ -2,14 +2,14 @@
  * Fixed look per agent first name.
  *
  * Themes (placeholder until real sprites exist):
- *  - Florian   : chill, "Pokemon" vibe     -> warm electric yellow
- *  - Alexandre : robotics engineer/cyborg  -> metallic cyan steel
- *  - Martial   : old wise master           -> sage olive green
- *  - Guilherm  : vivid electron            -> neon electric blue
- *  - Noemie    : classy and clean          -> cream white
- *  - Orlane    : designer                  -> creative magenta
- *  - Yanis     : Russian style             -> deep red
- *  - Germain   : looks like a PCB          -> circuit-board green
+ *  - Louis   : chill, "Pokemon" vibe     -> warm electric yellow
+ *  - Leo : robotics engineer/cyborg  -> metallic cyan steel
+ *  - Victor   : old wise master           -> sage olive green
+ *  - Theo  : vivid electron            -> neon electric blue
+ *  - Emma    : classy and clean          -> cream white
+ *  - Clara    : designer                  -> creative magenta
+ *  - Ivan     : Russian style             -> deep red
+ *  - Hugo   : looks like a PCB          -> circuit-board green
  *
  * Source of truth: agentPixelLooks.json (body colour + pixel rects, drawn in
  * AgentSprite). `accessory` is kept as derived data.
@@ -75,7 +75,7 @@ function shade(hex: string, delta: number): string {
 }
 
 /**
- * Resolve the look for an agent name ("Florian", "Florian 2", "Noémie 3").
+ * Resolve the look for an agent name ("Louis", "Louis 2", "Emma 3").
  * Unknown / empty names keep `fallbackColor`. Duplicates (suffix >= 2) get a
  * slightly darker shade of the base colour.
  */
