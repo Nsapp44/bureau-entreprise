@@ -4,6 +4,18 @@ Un bureau pixel art qui montre en direct tes sessions Claude Code et Claude (app
 
 > Fork personnalisé de [Claude Office Visualizer](https://github.com/paulrobello/claude-office) (v0.24.1) de Paul Robello, licence MIT. Voir `LICENSE`.
 
+## Aperçu
+
+Captures prises avec des données fictives (noms de conversations et prénoms d'agents inventés).
+
+**Vue « Conversations »** : un bureau par conversation, tableaux d'abonnements / conso, salles atelier.
+
+![Vue Conversations](docs/screens/conversations.png)
+
+**Vue « Bureau »** : le bureau classique avec l'agent principal, la cafetière et la conso du jour.
+
+![Vue Bureau](docs/screens/bureau.png)
+
 ## Ce qu'il y a en plus de l'original
 
 - **Vue « Conversations »** : une scène fixe (1920×1164) avec un bureau par conversation, l'ascenseur, la cafetière, les salles atelier / impression 3D.
